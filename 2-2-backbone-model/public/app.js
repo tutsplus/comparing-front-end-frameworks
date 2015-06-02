@@ -9,6 +9,5 @@ var Contacts = Backbone.Collection.extend({
 var contacts = new Contacts();
 
 contacts.fetch().then(function () {
-
-
+  console.log(contacts.pluck('firstName'));
 });

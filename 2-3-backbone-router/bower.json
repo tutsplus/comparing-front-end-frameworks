@@ -1,7 +1,6 @@
 {
   "author": "Andrew Burgess <andrew@burgess.io>",
-  "name": "tutsplus-comparing-backend-frameworks",
-  "version": "0.2.3",
+  "name": "tutsplus-comparing-front-end-backbone",
   "dependencies": {
     "backbone": "~1.1.2",
     "jquery": "~2.1.4"
