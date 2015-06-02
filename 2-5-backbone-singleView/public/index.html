@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title> Backbone Contacts </title>
+    <link rel='stylesheet' href='/style.css' />
+  </head>
+  <body>
+    <div id='main'>
+      <header>
+        <h1> <a href='/'> Backbone Contacts </a> </h1>
+      </header>
+      <div id='app'></div>
+    </div>
+
+    <script type='text/template' id='ContactsItemViewTemplate'>
+<a href='/contacts/<%= id %>'> <%= firstName %> <%= lastName %> <span> <%= email %> </span> </a>
+    </script>
+
+    <script type='text/template' id='ContactViewTemplate'>
+<h2> <%= firstName %> <%= lastName %> </h2>
+
+<p> <label> First Name: </label> <input class='firstName' value="<%= firstName %>" /> </p>
+<p> <label> Last Name: </label> <input class='lastName' value="<%= lastName %>" /> </p>
+<p> <label> Email: </label> <input class='email' value="<%= email %>" /> </p>
+
+<p>
+  <button class='update'> Update </button>
+  <button class='delete'> Delete </button>
+</p>
+    </script>
+    <script src='/lib/jquery/dist/jquery.min.js'> </script>
+    <script src='/lib/underscore/underscore-min.js'> </script>
+    <script src='/lib/backbone/backbone.js'> </script>
+    <script src='/app.js'> </script>
+  </body>
+</html>

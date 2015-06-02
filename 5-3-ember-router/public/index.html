@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title> Ember Contacts </title>
+    <link rel='stylesheet' href='/style.css' />
+    <base href="/" />
+  </head>
+  <body>
+    <script type='text/x-handlebars' id='application'>
+      <div id='main'>
+        <header>  
+          <h1> {{#link-to 'contacts'}} Ember Contacts {{/link-to}} </h1>
+        </header>
+        <div id='app'>
+          {{outlet}}
+        </div>
+      </div>
+    </script>
+
+    <script src='/lib/jquery/dist/jquery.min.js'> </script>
+    <script src='/lib/handlebars/handlebars.js'> </script>
+    <script src='/lib/ember/ember-template-compiler.js'> </script>
+    <script src='/lib/ember/ember.debug.js'> </script>
+    <script src='/lib/ember-data/ember-data.js'> </script>
+    <script src='/app.js'> </script>
+  </body>
+</html>

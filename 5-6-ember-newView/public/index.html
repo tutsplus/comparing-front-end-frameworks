@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title> Ember Contacts </title>
+    <link rel='stylesheet' href='/style.css' />
+    <base href="/" />
+  </head>
+  <body>
+    <script type='text/x-handlebars' id='application'>
+      <div id='main'>
+        <header>  
+          <h1> {{#link-to 'contacts'}} Ember Contacts {{/link-to}} </h1>
+        </header>
+        <div id='app'>
+          {{outlet}}
+        </div>
+      </div>
+    </script>
+
+    <script type='text/x-handlebars' id='contacts'>
+      <div class='actions'>
+        {{#link-to 'new' }} New Contact {{/link-to}}
+      </div>
+
+      <ul>
+        {{#each contact in model}}
+          <li>
+            {{#link-to 'contact' contact }}
+              {{contact.firstName}} {{contact.lastName}} <span> {{contact.email}} </span>
+            {{/link-to}}
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script type='text/x-handlebars' id='contact'>
+      <h2> {{model.firstName}} {{model.lastName}} </h2>
+
+      <p> <label> First Name: </label> {{input value=model.firstName}} </p>
+      <p> <label> Last Name: </label> {{input value=model.lastName}} </p>
+      <p> <label> Email: </label> {{input value=model.email}} </p>
+      <p>
+        <button {{action 'update'}}> Update </button>
+        <button {{action 'delete'}}> Delete </button>
+      </p>
+    </script>
+
+    <script type='text/x-handlebars' id='new'>
+      <h2> New Contact </h2>
+
+      <p> <label> First Name: </label> {{input value=model.firstName}} </p>
+      <p> <label> Last Name: </label> {{input value=model.lastName}} </p>
+      <p> <label> Email: </label> {{input value=model.email}} </p>
+
+      <p> <button {{action 'add'}}> Add Contact </button> </p>
+    </script>
+
+    <script src='/lib/jquery/dist/jquery.min.js'> </script>
+    <script src='/lib/handlebars/handlebars.js'> </script>
+    <script src='/lib/ember/ember-template-compiler.js'> </script>
+    <script src='/lib/ember/ember.debug.js'> </script>
+    <script src='/lib/ember-data/ember-data.js'> </script>
+    <script src='/app.js'> </script>
+  </body>
+</html>
